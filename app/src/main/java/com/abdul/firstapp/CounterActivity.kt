@@ -2,6 +2,7 @@ package com.abdul.firstapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
 
@@ -16,11 +17,15 @@ class CounterActivity : AppCompatActivity() {
 
     fun updateCounter(view: android.view.View) {
         var currentValue = Integer.parseInt(tvCounter.text.toString())
-
-        tvCounter.setText("" + counter++)
+        counter++
+        tvCounter.setText("" + counter)
+        Log.d("CounterActivity", "updateCounter: current value" + counter)
     }
 
     fun showToast(view: android.view.View) {
-        Toast.makeText(this, "" + counter++, Toast.LENGTH_SHORT).show()
+        updateCounter(view)
+        tvCounter.setText("" + counter)
+        Toast.makeText(this, "" + counter, Toast.LENGTH_SHORT).show()
+        Log.d("CounterActivity", "updateCounter: current value")
     }
 }
