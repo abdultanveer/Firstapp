@@ -19,6 +19,13 @@
         />
 
     <Button
+        android:id="@+id/buttonToast"
+        android:onClick="showToast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="toast" />
+
+    <Button
         android:id="@+id/buttonCount"
         android:onClick="updateCounter"
         android:layout_width="match_parent"
