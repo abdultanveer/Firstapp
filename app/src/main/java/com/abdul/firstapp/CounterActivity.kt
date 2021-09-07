@@ -31,4 +31,8 @@ class CounterActivity : AppCompatActivity() {
         Toast.makeText(this, "" + counter, Toast.LENGTH_SHORT).show()
         Log.d("CounterActivity", "updateCounter: current value")
     }
+
+    fun returnReply(){
+        Log.d(LOG_TAG, "End counter activity")
+    }
 }
