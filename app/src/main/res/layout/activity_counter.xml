@@ -8,7 +8,12 @@
     android:orientation="vertical"
     android:background="@android:color/holo_blue_light"
     tools:context=".CounterActivity">
-
+    <Button
+        android:id="@+id/btnToast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showToast"
+        android:text="Toast" />
     <TextView
         android:id="@+id/tvCounter"
         android:layout_width="match_parent"
@@ -25,4 +30,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="count" />
+
+
 </LinearLayout>
