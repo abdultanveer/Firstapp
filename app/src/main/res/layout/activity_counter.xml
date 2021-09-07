@@ -9,21 +9,22 @@
     android:orientation="vertical"
     tools:context=".CounterActivity">
 
-    <TextView
-        android:id="@+id/tvCounter"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="50sp"
-        android:text="0"
-        />
-
     <Button
         android:id="@+id/buttonToast"
         android:onClick="showToast"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="toast" />
+
+    <TextView
+        android:id="@+id/tvCounter"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:textSize="50sp"
+        android:text="0"
+        />
 
     <Button
         android:id="@+id/buttonCount"
