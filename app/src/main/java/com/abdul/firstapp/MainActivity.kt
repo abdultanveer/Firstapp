@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     lateinit var etName: EditText   //declartion
@@ -21,6 +22,8 @@ class MainActivity : AppCompatActivity() {
 
     fun clickHandler(view: View) {
         var name = etName.text.toString()
-        tvRes.setText(name)
+        Toast.makeText(this@MainActivity, name, Toast.LENGTH_LONG).show()
+        tvRes.setText("Welcome " + name)
+
     }
 }
