@@ -24,6 +24,6 @@ class MainActivity : AppCompatActivity() {
         var name = etName.text.toString()
         Toast.makeText(this@MainActivity, name, Toast.LENGTH_LONG).show()
         tvRes.setText("Welcome " + name)
-
+        setContentView(R.layout.logged_in)
     }
 }
