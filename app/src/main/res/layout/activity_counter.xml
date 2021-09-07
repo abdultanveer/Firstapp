@@ -10,7 +10,7 @@
     tools:context=".CounterActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvCounter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -20,6 +20,7 @@
 
     <Button
         android:id="@+id/buttonCount"
+        android:onClick="updateCounter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="count" />
