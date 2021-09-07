@@ -20,6 +20,13 @@ class MainActivity : AppCompatActivity() {
         Log.d("MainActivity", "Hello World")
     }
 
+    @Override
+    public override fun onStart(){
+        super.onStart()
+        val LOG_TAG = "MainActivity"
+        Log.d(LOG_TAG, "onStart")
+    }
+
     fun clickHandler(view: View) {
         var name = etName.text.toString()
         Toast.makeText(this@MainActivity, name, Toast.LENGTH_LONG).show()

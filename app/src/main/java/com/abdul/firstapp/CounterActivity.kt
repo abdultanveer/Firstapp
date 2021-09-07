@@ -7,10 +7,14 @@ import android.widget.TextView
 import android.widget.Toast
 
 class CounterActivity : AppCompatActivity() {
+    private val LOG_TAG: String = "CounterActivity"
     lateinit var tvCounter: TextView
     var counter = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val LOG_TAG = "onCreate"
+        Log.d(LOG_TAG, "------")
+        Log.d(LOG_TAG, "onCreate")
         setContentView(R.layout.activity_counter)
         tvCounter = findViewById(R.id.tvCounter)
     }
