@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Firstapp</string>
+    <string name="enter_name">enter name</string>
+    <string name="submit">submit</string>
+    <string name="cancel">cancel</string>
+    <string name="textview">TextView</string>
 </resources>
