@@ -17,8 +17,7 @@ class CounterActivity : AppCompatActivity() {
 
     fun updateCounter(view: android.view.View) {
         var currentValue = Integer.parseInt(tvCounter.text.toString())
-        counter++
-        tvCounter.setText("" + counter)
+        tvCounter.setText("" + ++counter)
         Log.d("CounterActivity", "updateCounter: current value" + counter)
     }
 
