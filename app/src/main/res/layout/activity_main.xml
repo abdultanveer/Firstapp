@@ -13,7 +13,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="49dp"
         android:ems="10"
-        android:hint="enter name"
+        android:hint="@string/enter_nm"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,6 +25,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="25dp"
         android:ems="10"
+        android:hint="@string/enter_pwd"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etName" />
