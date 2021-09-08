@@ -8,6 +8,14 @@
     android:orientation="vertical"
     android:background="@android:color/holo_blue_light"
     tools:context=".CounterActivity">
+    <EditText
+        android:id="@+id/etContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="enter contact details"
+        android:inputType="textPersonName"
+         />
     <Button
         android:id="@+id/btnToast"
         android:layout_width="match_parent"
@@ -30,6 +38,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="count" />
+
+
 
 
 </LinearLayout>

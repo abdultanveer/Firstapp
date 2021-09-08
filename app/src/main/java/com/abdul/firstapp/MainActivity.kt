@@ -20,8 +20,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clickHandler(view: View) {
-        //startCounterActivity()
-        startDialer()
+        startCounterActivity()
+        //startDialer()
     }
 
     private fun startDialer() {
@@ -34,7 +34,13 @@ class MainActivity : AppCompatActivity() {
         var name = etName.text.toString()
         // tvRes.setText(name)
         intent.putExtra("nkey", name)
-        startActivity(intent)
+        startActivityForResult(intent,123)//
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, dataIntent: Intent?) {
+        super.onActivityResult(requestCode, resultCode, dataIntent)
+        var contact = dataIntent?.getStringExtra("ckey")
+        tvRes.setText(contact)
     }
 
 
