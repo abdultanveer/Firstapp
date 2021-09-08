@@ -1,6 +1,7 @@
 package com.abdul.firstapp
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -29,6 +30,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clickHandler(view: View) {
+        //startCounterActivity()
+        //Implicit intent
+        var dialIntent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:988097932"))
+        startActivity(dialIntent)
+    }
+
+    private fun startCounterActivity() {
+        //Explicit intent -- name of the class to be invoked
         var intent = Intent(this, CounterActivity::class.java)
 
         var name = etName.text.toString()
@@ -40,4 +49,5 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("nkey", name)
         startActivity(intent)
     }
+
 }
