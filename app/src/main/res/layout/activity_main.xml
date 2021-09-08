@@ -12,25 +12,42 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="49dp"
+        android:autofillHints="John Doe"
         android:ems="10"
         android:hint="@string/enter_name"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="John Doe" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--Button to open the image selector-->
+
+
+    <Button
+        android:id="@+id/BSelectImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginBottom="186dp"
+        android:text="SELECT IMAGE"
+        android:textColor="@android:color/white"
+        android:onClick="imageChooser"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
-        android:hint="@string/enter_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="25dp"
+        android:autofillHints="Passw@rd"
         android:ems="10"
+        android:hint="@string/enter_password"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        android:autofillHints="Passw@rd"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etName" />
 
@@ -73,4 +90,14 @@
         android:text="@string/login"
         app:layout_constraintStart_toStartOf="@+id/etName"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="11dp"
+        app:layout_constraintStart_toStartOf="@+id/tvResult"
+        app:layout_constraintTop_toBottomOf="@+id/tvResult"
+        tools:srcCompat="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>
