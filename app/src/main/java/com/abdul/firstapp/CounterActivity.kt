@@ -17,6 +17,8 @@ class CounterActivity : AppCompatActivity() {
         Log.d(LOG_TAG, "onCreate")
         setContentView(R.layout.activity_counter)
         tvCounter = findViewById(R.id.tvCounter)
+        var name = intent.getStringExtra("nkey")
+        tvCounter.setText(name)
     }
 
     fun updateCounter(view: android.view.View) {

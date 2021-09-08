@@ -30,10 +30,14 @@ class MainActivity : AppCompatActivity() {
 
     fun clickHandler(view: View) {
         var intent = Intent(this, CounterActivity::class.java)
-        startActivity(intent)
+
         var name = etName.text.toString()
+        /*
         Toast.makeText(this@MainActivity, name, Toast.LENGTH_LONG).show()
         tvRes.setText("Welcome " + name)
         setContentView(R.layout.logged_in)
+        */
+        intent.putExtra("nkey", name)
+        startActivity(intent)
     }
 }
