@@ -1,5 +1,6 @@
 package com.abdul.firstapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -18,7 +19,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clickHandler(view: View) {
+        var intent = Intent(this,CounterActivity::class.java)
         var name = etName.text.toString()
-        tvRes.setText(name)
+       // tvRes.setText(name)
+        intent.putExtra("nkey",name)
+        startActivity(intent)
     }
 }
