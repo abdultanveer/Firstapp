@@ -3,7 +3,7 @@
     <string name="enter_name">enter name</string>
     <string name="submit" translatable="false">submit</string>
     <string name="cancel" translatable="false">cancel</string>
-    <string name="textview" translatable="false">TextView</string>
+    <string name="textview" translatable="false">Username</string>
     <string name="login" translatable="false">Login</string>
     <string name="enter_password">Enter password</string>
 </resources>

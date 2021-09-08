@@ -1,5 +1,6 @@
 package com.abdul.firstapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -28,6 +29,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clickHandler(view: View) {
+        var intent = Intent(this, CounterActivity::class.java)
+        startActivity(intent)
         var name = etName.text.toString()
         Toast.makeText(this@MainActivity, name, Toast.LENGTH_LONG).show()
         tvRes.setText("Welcome " + name)
