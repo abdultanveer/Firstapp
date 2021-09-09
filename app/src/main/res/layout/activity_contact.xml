@@ -13,4 +13,18 @@
         android:background="#c0c0c0"
         android:layout_centerHorizontal="true"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <EditText
+        android:id="@+id/firstNameEt"
+        android:background="#fff"
+        android:padding="10dp"
+        android:layout_below="@id/profileImageView"
+        android:layout_marginTop="5dp"
+        android:textColorHint="#c5c5c5"
+        android:hint="First name"
+        android:textColor="#000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        />
 </LinearLayout>
