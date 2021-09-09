@@ -15,4 +15,16 @@ public class CalculatorTest extends TestCase {
         int actual = Calculator.multiply(2,20);
         assertEquals(expected,actual);
     }
+
+    public void testSubtract() {
+        int expected = 40;
+        int actual = Calculator.subtract(80,40);
+        assertEquals(expected,actual);
+    }
+
+    public void testDivide() {
+        int expected = 40;
+        int actual = Calculator.divide(80,2);
+        assertEquals(expected,actual);
+    }
 }
