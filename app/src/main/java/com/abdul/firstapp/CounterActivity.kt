@@ -7,7 +7,8 @@ import android.widget.TextView
 import android.widget.Toast
 
 class CounterActivity : AppCompatActivity() {
-    private val LOG_TAG: String = "CounterActivity"
+    //private val LOG_TAG: String = "CounterActivity"
+    var TAG = CounterActivity::class.java.simpleName
     lateinit var tvCounter: TextView
     var counter = 0
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +21,20 @@ class CounterActivity : AppCompatActivity() {
         //var name = intent.getStringExtra("nkey")
         //tvCounter.setText(name)
     }
+    override fun onStart() {
+      super.onStart()
+      Log.e(TAG, "onStart")
+    }
+
+  override fun onPause() {
+      super.onPause()
+      Log.e(TAG, "onPause")
+  }
+
+  override fun onStop() {
+      super.onStop()
+      Log.e(TAG, "onStop")
+  }
 
     fun updateCounter(view: android.view.View) {
         var currentValue = Integer.parseInt(tvCounter.text.toString())
@@ -35,6 +50,6 @@ class CounterActivity : AppCompatActivity() {
     }
 
     fun returnReply(){
-        Log.d(LOG_TAG, "End counter activity")
+        Log.d(TAG, "End counter activity")
     }
 }
