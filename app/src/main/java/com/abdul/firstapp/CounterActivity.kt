@@ -3,12 +3,14 @@ package com.abdul.firstapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 
 class CounterActivity : AppCompatActivity() {
     //private val LOG_TAG: String = "CounterActivity"
     var TAG = CounterActivity::class.java.simpleName
+    lateinit var etContact: EditText
     lateinit var tvCounter: TextView
     var counter = 0
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,8 +20,10 @@ class CounterActivity : AppCompatActivity() {
         Log.d(LOG_TAG, "onCreate")
         setContentView(R.layout.activity_counter)
         tvCounter = findViewById(R.id.tvCounter)
-        //var name = intent.getStringExtra("nkey")
+
         //tvCounter.setText(name)
+        etContact = findViewById(R.id.contactID)
+        //var name = intent.getStringExtra("nkey")
     }
     override fun onStart() {
       super.onStart()
