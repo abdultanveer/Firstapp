@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import android.widget.*
@@ -11,13 +12,12 @@ import android.widget.*
 class MainActivity : AppCompatActivity() {
     lateinit var etName: EditText   //declartion
     lateinit var tvRes: TextView
+    lateinit var IVPreviewImage: ImageView
+    private var imageUri: Uri? = null
 
     // One Button
     var BSelectImage: Button? = null
-
-    // One Preview Image
-    var IVPreviewImage: ImageView? = null
-
+    val pickImage = 100
     // constant to compare
     // the activity result code
     var SELECT_PICTURE = 200
@@ -38,6 +38,11 @@ class MainActivity : AppCompatActivity() {
         //BSelectImage.setOnClickListener(View.OnClickListener { imageChooser() })
         etName = findViewById(R.id.etName) //initialization
         tvRes = findViewById(R.id.tvResult)
+        title = "KotlinApp"
+        BSelectImage?.setOnClickListener {
+            val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+            startActivityForResult(gallery, pickImage)
+        }
         Log.d("MainActivity", "Hello World")
     }
 
@@ -87,28 +92,12 @@ class MainActivity : AppCompatActivity() {
 
     // this function is triggered when user
     // selects the image from the imageChooser
-    private fun onActivityResult(requestCode: Int, resultCode: Int)
-    {
-
-        //val data
-        //super.onActivityResult(requestCode, resultCode, data);
-
-        if (resultCode == RESULT_OK) {
-
-            // compare the resultCode with the
-            // SELECT_PICTURE constant
-            /*
-            if (requestCode == SELECT_PICTURE) {
-                // Get the url of the image from data
-                Uri selectedImageUri = data . getData ();
-                if (null != selectedImageUri) {
-                    // update the preview image in the layout
-                    IVPreviewImage.setImageURI(selectedImageUri);
-                }
-            }
-            */
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == RESULT_OK && requestCode == pickImage) {
+            imageUri = data?.data
+            IVPreviewImage.setImageURI(imageUri)
         }
-
     }
 
 }
