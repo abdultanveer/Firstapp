@@ -1,5 +1,6 @@
 package com.abdul.firstapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -20,10 +21,9 @@ class CounterActivity : AppCompatActivity() {
         Log.d(LOG_TAG, "onCreate")
         setContentView(R.layout.activity_counter)
         tvCounter = findViewById(R.id.tvCounter)
-
-        //tvCounter.setText(name)
         etContact = findViewById(R.id.contactID)
         //var name = intent.getStringExtra("nkey")
+        //tvCounter.setText(name)
     }
     override fun onStart() {
       super.onStart()
@@ -47,6 +47,10 @@ class CounterActivity : AppCompatActivity() {
     }
 
     fun showToast(view: android.view.View) {
+        var contact = etContact.text.toString()
+        var intent = Intent()
+        intent.putExtra("ckey", contact)
+        setResult(RESULT_OK)
         updateCounter(view)
         tvCounter.setText("" + counter)
         Toast.makeText(this, "" + counter, Toast.LENGTH_SHORT).show()
