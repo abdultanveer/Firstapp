@@ -27,4 +27,10 @@ public class CalculatorTest extends TestCase {
         int actual = Calculator.divide(80,2);
         assertEquals(expected,actual);
     }
+
+    public void testModulo() {
+        int expected = 2;
+        int actual = Calculator.divide(12,5);
+        assertEquals(expected,actual);
+    }
 }
