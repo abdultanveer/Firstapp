@@ -1,6 +1,8 @@
 package com.abdul.firstapp;
 
-public class Calculator {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Calculator extends AppCompatActivity {
 
     public static int add(int a, int b){
         return a + b;
