@@ -16,8 +16,8 @@ class CounterActivity : AppCompatActivity() {
     var counter = 0
     lateinit var etContact:EditText
 
-    fun add(){
-
+    fun add( a: Int,b:Int): Int{
+    return a+b
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
