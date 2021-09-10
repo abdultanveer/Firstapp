@@ -11,11 +11,14 @@ import android.widget.Toast
 
 class CounterActivity : AppCompatActivity() {
     var TAG = CounterActivity::class.java.simpleName
-
+    //TODO: Add Abdullah's method!
     lateinit var tvCounter: TextView
     var counter = 0
     lateinit var etContact:EditText
 
+    fun add(){
+
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_counter)
