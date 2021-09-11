@@ -8,4 +8,14 @@
     <string name="enter_password">Enter password</string>
     <string name="select_image">SELECT IMAGE</string>
     <string name="profile_picture">Profile picture</string>
+    <string name="helpingMessageOne">Next time you will see your last alarm here</string>
+    <string name="helpingMessageTwo">Set the alarm in the future with the olde settings</string>
+    <string name="mon">M</string>
+    <string name="tue">T</string>
+    <string name="wed">W</string>
+    <string name="thu">TH</string>
+    <string name="fri">F</string>
+    <string name="sat">SA</string>
+    <string name="sun">SU</string>
+    <string name="action_settings">Settings</string>
 </resources>
