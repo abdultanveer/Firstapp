@@ -61,6 +61,7 @@
             android:layout_marginTop="230dp"
             android:text="@string/time_will_be_shown_here"
             android:textSize="20sp" />
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -187,7 +188,20 @@
         />
 
     <!--Button to show TimePicker dialog-->
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <!--Time will be shown in this textView-->
+    <Button
+        android:id="@+id/buttonAlarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timePicker"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/set_alarm" />
+
 
 </RelativeLayout>

@@ -6,17 +6,18 @@
     <string name="textview" translatable="false">Username</string>
     <string name="login" translatable="false">Login</string>
     <string name="enter_password">Enter password</string>
-    <string name="select_image">SELECT IMAGE</string>
-    <string name="profile_picture">Profile picture</string>
-    <string name="helpingMessageOne">Next time you will see your last alarm here</string>
-    <string name="helpingMessageTwo">Set the alarm in the future with the olde settings</string>
-    <string name="mon">M</string>
-    <string name="tue">T</string>
-    <string name="wed">W</string>
-    <string name="thu">TH</string>
-    <string name="fri">F</string>
-    <string name="sat">SA</string>
-    <string name="sun">SU</string>
-    <string name="action_settings">Settings</string>
-    <string name="time_will_be_shown_here">Time will be shown here</string>
+    <string name="select_image" translatable="false">SELECT IMAGE</string>
+    <string name="profile_picture" translatable="false">Profile picture</string>
+    <string name="helpingMessageOne" translatable="false">Next time you will see your last alarm here</string>
+    <string name="helpingMessageTwo" translatable="false">Set the alarm in the future with the old settings</string>
+    <string name="mon" translatable="false">M</string>
+    <string name="tue" translatable="false">T</string>
+    <string name="wed" translatable="false">W</string>
+    <string name="thu" translatable="false">TH</string>
+    <string name="fri" translatable="false">F</string>
+    <string name="sat" translatable="false">SA</string>
+    <string name="sun" translatable="false">SU</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="time_will_be_shown_here" translatable="false">Time: </string>
+    <string name="set_alarm">Set Alarm</string>
 </resources>
