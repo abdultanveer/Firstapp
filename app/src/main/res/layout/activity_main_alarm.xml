@@ -17,13 +17,12 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
 
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
         android:clickable="true"
         android:focusable="true"
         android:onClick="rlButtonLayoutOnClickListener"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
+
         <TextView
             android:id="@+id/tvFirstHelpingMessage"
             android:layout_width="wrap_content"
@@ -40,10 +39,10 @@
             android:id="@+id/tvSecondHelpingMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginBottom="60dp"
+            android:layout_alignParentBottom="true"
             android:layout_marginEnd="15dp"
+            android:layout_marginBottom="60dp"
             android:padding="5dp"
             android:text="@string/helpingMessageTwo"
             android:visibility="gone" />
@@ -54,6 +53,14 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="-53dp"
             android:text="Select Time" />
+
+        <TextView
+            android:id="@+id/timeTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="230dp"
+            android:text="@string/time_will_be_shown_here"
+            android:textSize="20sp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -71,6 +78,7 @@
             android:id="@+id/tvAlarmTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="32dp"
@@ -181,14 +189,5 @@
     <!--Button to show TimePicker dialog-->
 
     <!--Time will be shown in this textView-->
-
-    <TextView
-        android:id="@+id/timeTv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Time will be shown here"
-        android:textSize="2dp"
-        android:layout_alignParentTop="true"
-        />
 
 </RelativeLayout>
