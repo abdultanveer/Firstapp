@@ -1,5 +1,7 @@
 package com.abdul.firstapp
 
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -8,11 +10,13 @@ import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import android.widget.*
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var etName: EditText   //declartion
     lateinit var tvRes: TextView
     lateinit var IVPreviewImage: ImageView
+    lateinit var alarmService: AlarmService
     private var imageUri: Uri? = null
 
     // One Button
@@ -25,6 +29,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //alarmService = AlarmService()
+        /*
+        BSelectImage?.setOnClickListener{
+            setAlarm()
+        }
+        */
+        /*
+        val setExact
+        setExact.setOnClickListener{
+            setAlarm()
+        }
+        */
         // register the UI widgets with their appropriate IDs
         // register the UI widgets with their appropriate IDs
         BSelectImage = findViewById(R.id.BSelectImage)
@@ -44,6 +60,35 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(gallery, pickImage)
         }
         Log.d("MainActivity", "Hello World")
+    }
+
+    private fun setAlarm(){
+        Calendar.getInstance().apply {
+            DatePickerDialog(
+                this@MainActivity,
+                0,
+                DatePickerDialog.OnDateSetListener{ _, year, month, day ->
+                    this.set(Calendar.YEAR, year)
+                    this.set(Calendar.MONTH, month)
+                    this.set(Calendar.DAY_OF_MONTH, day)
+
+                    TimePickerDialog(
+                        this@MainActivity,
+                        0,
+                        TimePickerDialog.OnTimeSetListener{_, hour, min ->
+                            this.set(Calendar.HOUR_OF_DAY, hour)
+                            this.set(Calendar.MINUTE, min)
+                        },
+                        this.get(Calendar.HOUR_OF_DAY),
+                        this.get(Calendar.MINUTE),
+                        false
+                    ).show()
+                },
+                this.get(Calendar.YEAR),
+                this.get(Calendar.MONTH),
+                this.get(Calendar.DAY_OF_MONTH)
+            ).show()
+        }
     }
 
     // this function is triggered when

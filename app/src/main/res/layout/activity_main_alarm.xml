@@ -201,6 +201,7 @@
         android:layout_below="@id/timePicker"
         android:layout_centerInParent="true"
         android:layout_marginTop="10dp"
+        android:onClick="OnToggleClicked"
         android:text="@string/set_alarm" />
 
 
