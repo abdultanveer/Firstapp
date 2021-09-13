@@ -1,5 +1,7 @@
 package com.abdul.firstapp;
 
+import com.abdul.firstapp.model.Calculator;
+
 import junit.framework.TestCase;
 
 public class CalculatorTest extends TestCase {

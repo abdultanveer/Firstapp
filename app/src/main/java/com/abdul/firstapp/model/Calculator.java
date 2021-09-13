@@ -1,4 +1,4 @@
-package com.abdul.firstapp;
+package com.abdul.firstapp.model;
 
 import androidx.appcompat.app.AppCompatActivity;
 

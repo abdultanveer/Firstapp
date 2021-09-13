@@ -15,4 +15,36 @@
         android:text="ShowData"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMessenger">
+
+        <RadioButton
+            android:id= "@+id/radioButtonMale"
+            android:layout_width="122dp"
+            android:layout_height="match_parent"
+            android:text="@string/male" />
+        <RadioButton
+            android:id="@+id/radioButtonFemale"
+            android:layout_width="122dp"
+            android:layout_height="match_parent"
+            android:text="@string/female" />
+
+        <Spinner
+            android:id="@+id/spinnerCountries"
+            android:entries="@array/Countries"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="27dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gender" />
+
+    </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>
