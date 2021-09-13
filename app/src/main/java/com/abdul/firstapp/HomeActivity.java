@@ -26,6 +26,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setTitle("Android Cafe");
         /*try {
             //throw IllegalStateException();
             //println("Hello World")
