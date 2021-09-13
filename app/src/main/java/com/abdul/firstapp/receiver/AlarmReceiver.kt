@@ -3,6 +3,12 @@ package com.abdul.firstapp.receiver
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import com.abdul.firstapp.AlarmService
+import com.abdul.firstapp.util.Constants
+import java.lang.String.format
+import java.text.DateFormat
+import java.util.*
+import java.util.concurrent.TimeUnit
 
 class AlarmReceiver: BroadcastReceiver() {
     /**
@@ -43,6 +49,35 @@ class AlarmReceiver: BroadcastReceiver() {
      * @param intent The Intent being received.
      */
     override fun onReceive(context: Context, intent: Intent) {
-        TODO("Not yet implemented")
+        val timeInMillis = intent.getLongExtra(Constants.EXTRA_EXACT_ALARM_TIME, 0L)
+        when(intent.action){
+            Constants.ACTION_SET_EXACT_ALARM->{
+                //buildNotification(context, "Set Exact Time", convertDate(timeInMillis))
+            }
+            Constants.ACTION_SET_REPETITVE_ALARM->{
+                val cal = Calendar.getInstance().apply {
+                    this.timeInMillis = timeInMillis + TimeUnit.DAYS.toMillis(7)
+                }
+                //AlarmService(context).setReptitiveAlarm(cal.timeInMillis)
+                //buildNotification(context, "Set Repetitive Time", convertDate(cal.timeInMillis))
+            }
+        }
     }
+
+    private fun buildNotification(context:Context, title:String, message:String){
+
+        /*
+        Notify
+            .with(context)
+            .content{
+                this.title = title
+                this.text = "I got triggered at - $message"
+            }
+            .show()
+        */
+
+    }
+
+    //private fun convertDate(timeInMillis: Long): String =
+       //DateFormat.format("dd//MM/yyyy hh:mm:ss", timeInMillis).toString()
 }

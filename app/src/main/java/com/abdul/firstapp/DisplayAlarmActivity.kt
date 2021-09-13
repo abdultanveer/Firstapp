@@ -56,6 +56,9 @@ class DisplayAlarmActivity : AppCompatActivity() {
 
     private fun setAlarm(callback: Long){
         Calendar.getInstance().apply {
+            this.set(Calendar.SECOND, 0)
+            this.set(Calendar.MILLISECOND, 0)
+
             DatePickerDialog(
                 this@DisplayAlarmActivity,
                 0,
@@ -70,6 +73,7 @@ class DisplayAlarmActivity : AppCompatActivity() {
                         TimePickerDialog.OnTimeSetListener { _, hour, min ->
                             this.set(Calendar.HOUR_OF_DAY, hour)
                             this.set(Calendar.MINUTE, min)
+                            callback(this.timeInMillis)
                         },
                         this.get(Calendar.HOUR_OF_DAY),
                         this.get(Calendar.MINUTE),
@@ -81,6 +85,10 @@ class DisplayAlarmActivity : AppCompatActivity() {
                 this.get(Calendar.DAY_OF_MONTH)
             ).show()
         }
+    }
+
+    private fun callback(timeInMillis: Long) {
+
     }
 
 
