@@ -1,5 +1,7 @@
 package com.abdul.firstapp;
 
+import static java.sql.DriverManager.println;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -15,6 +17,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /*try {
+            //throw IllegalStateException();
+            //println("Hello World")
+        } catch (exc: Throwable) {
+            println("Something went wrong")
+        }*/
         setContentView(R.layout.activity_home);
 
         View toastButton = findViewById(R.id.btnMessenger);
@@ -26,12 +34,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         if (spinner != null) {
             spinner.setOnItemSelectedListener(this);
         }
+        //spinner.
 
     }
 
     @Override
     public void onClick(View view){
         Toast.makeText(this, "Button clicked", Toast.LENGTH_LONG).show();
+
+        //Toast.makeText(this, "Gender: " + spinner., Toast.LENGTH_LONG).show();
         /*
         SmsManager manager = SmsManager.getDefault();
         manager.sendTextMessage("5556", null, "Your top is", null, null);
@@ -54,7 +65,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
      */
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(this, "Item was selected!",Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, "Item was selected!",Toast.LENGTH_LONG).show();
+        String itemSelected = parent.getSelectedItem().toString();
+        Toast.makeText(this, itemSelected, Toast.LENGTH_SHORT).show();
     }
 
     /**
