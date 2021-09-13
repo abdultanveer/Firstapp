@@ -21,10 +21,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="159dp"
+        android:layout_marginBottom="52dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/_dynamic"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMessage">
+        app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
             android:id="@+id/radioButton"
@@ -43,11 +45,21 @@
 
     <Spinner
         android:id="@+id/spinnerCountries"
-        android:entries="@array/countries"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="27dp"
+        android:entries="@array/countries"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gender" />
+
+    <ListView
+        android:id="@+id/languageslv"
+        android:layout_width="409dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gender" />
 </androidx.constraintlayout.widget.ConstraintLayout>

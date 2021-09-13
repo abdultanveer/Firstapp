@@ -6,16 +6,25 @@ import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     Button toastButton;
+    String[] languages = {"english","french","arabic"}; //data-- plug
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        ListView langsListView = findViewById(R.id.languageslv); //socket
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1,languages);
+        langsListView.setAdapter(adapter);
+
 
         toastButton = findViewById(R.id.btnMessage);
         //clerk.getSomething(mobilePhone)
