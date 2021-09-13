@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Firstapp">
         <activity
-            android:name=".DisplayAlarmActivity"
+            android:name=".HomeActivity"
             android:exported="true" />
 
         <service
@@ -33,7 +33,7 @@
             android:name=".CounterActivity"
             android:exported="true" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".DisplayAlarmActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

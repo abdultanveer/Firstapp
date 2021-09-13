@@ -3,6 +3,7 @@ package com.abdul.firstapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -23,6 +24,8 @@ public class HomeActivity extends AppCompatActivity  implements  View.OnClickLis
     @Override
     public void onClick(View view){
         Toast.makeText(this, "Button clicked", Toast.LENGTH_LONG).show();
+        SmsManager manager = SmsManager.getDefault();
+        manager.sendTextMessage("5556", null, "Your top is", null, null);
     }
 
 }

@@ -20,10 +20,11 @@ import android.os.Vibrator
 
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat.getSystemService
+import androidx.fragment.app.FragmentActivity
 import com.abdul.firstapp.util.Constants
 
 
-class DisplayAlarmActivity : AppCompatActivity() {
+class DisplayAlarmActivity : AppCompatActivity()  {
     /*
     @Inject
     public lateinit var displayViewModel: DisplayAlarmViewModel
@@ -35,6 +36,9 @@ class DisplayAlarmActivity : AppCompatActivity() {
     lateinit var btnSetAlarm: Button
     lateinit var timePicker: TimePicker
     var myCalendar = Calendar.getInstance()
+    val timeInMillis = System.currentTimeMillis()
+    //myCalendar.set(Calendar.HOUR_OF_DAY, timePicker.getCurrentHour());
+    //cal.set(Calendar.SECOND, 0);
 
 
 
@@ -48,7 +52,7 @@ class DisplayAlarmActivity : AppCompatActivity() {
         }
         */
         timePicker = findViewById(R.id.timePicker)
-        val timeInMillis = System.currentTimeMillis()
+
         //alarmService.setExactAlarm(timeInMillis)
         setAlarm(timeInMillis)
         //setExactAlarm(timeInMillis)
@@ -58,7 +62,6 @@ class DisplayAlarmActivity : AppCompatActivity() {
         Calendar.getInstance().apply {
             this.set(Calendar.SECOND, 0)
             this.set(Calendar.MILLISECOND, 0)
-
             DatePickerDialog(
                 this@DisplayAlarmActivity,
                 0,
@@ -73,6 +76,7 @@ class DisplayAlarmActivity : AppCompatActivity() {
                         TimePickerDialog.OnTimeSetListener { _, hour, min ->
                             this.set(Calendar.HOUR_OF_DAY, hour)
                             this.set(Calendar.MINUTE, min)
+                            myCalendar.set(Calendar.HOUR_OF_DAY, timePicker.getCurrentHour());
                             callback(this.timeInMillis)
                         },
                         this.get(Calendar.HOUR_OF_DAY),
@@ -83,21 +87,22 @@ class DisplayAlarmActivity : AppCompatActivity() {
                 this.get(Calendar.YEAR),
                 this.get(Calendar.MONTH),
                 this.get(Calendar.DAY_OF_MONTH)
+
             ).show()
         }
+        //Toast.makeText(this@DisplayAlarmActivity, "ALARM ON FOR : " + Calendar.HOUR_OF_DAY + Calendar.MINUTE, Toast.LENGTH_SHORT).show()
     }
 
     private fun callback(timeInMillis: Long) {
 
     }
 
-
     // OnToggleClicked() method is implemented the time functionality
     @RequiresApi(Build.VERSION_CODES.M)
     fun OnToggleClicked(view: View) {
         myCalendar.set(Calendar.YEAR, 2021);
         myCalendar.set(Calendar.MONTH, 9);
-        myCalendar.set(Calendar.DAY_OF_MONTH, 11);
+        myCalendar.set(Calendar.DAY_OF_MONTH, 13);
         val alarmId = System.currentTimeMillis().toInt()
         val pi = PendingIntent.getBroadcast(
             this,
@@ -108,6 +113,8 @@ class DisplayAlarmActivity : AppCompatActivity() {
         if(getSystemService(ALARM_SERVICE) != null)
         {
             val manager = getSystemService(ALARM_SERVICE) as AlarmManager
+            //Sets the alarm
+            //manager.set(AlarmManager.RTC_WAKEUP, timeInMillis, pi);
             manager[AlarmManager.RTC_WAKEUP, myCalendar.getTimeInMillis()] = pi
         }
 
