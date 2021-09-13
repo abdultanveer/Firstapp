@@ -111,7 +111,7 @@ class DisplayAlarmActivity : AppCompatActivity() {
             manager[AlarmManager.RTC_WAKEUP, myCalendar.getTimeInMillis()] = pi
         }
 
-        Toast.makeText(this@DisplayAlarmActivity, "ALARM ON", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this@DisplayAlarmActivity, "ALARM ON ID: " + System.currentTimeMillis().toInt(), Toast.LENGTH_SHORT).show()
 
 
 
