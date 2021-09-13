@@ -8,12 +8,17 @@ import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     Button toastButton;
+    //Data-- plug
+    String[] languages  = {"Arabic", "English"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +29,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             println("Something went wrong")
         }*/
         setContentView(R.layout.activity_home);
+        //Socket
+        ListView langsListView = findViewById(R.id.languageslv);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1,languages);
+        langsListView.setAdapter(adapter);
 
         View toastButton = findViewById(R.id.btnMessenger);
         //Clerk.getSomething(mobilePhone)

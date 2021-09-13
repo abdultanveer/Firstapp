@@ -6,30 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <Button
-        android:id="@+id/btnMessenger"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="73dp"
-        android:layout_marginTop="92dp"
-        android:text="ShowData"
+    <ListView
+        android:id="@+id/languageslv"
+        android:layout_width="409dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="37dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="266dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/languageslv"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMessenger">
+        app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
-            android:id= "@+id/radioButtonMale"
+            android:id="@+id/radioButtonMale"
             android:layout_width="122dp"
             android:layout_height="match_parent"
             android:text="@string/male" />
+
         <RadioButton
             android:id="@+id/radioButtonFemale"
             android:layout_width="122dp"
@@ -38,13 +39,26 @@
 
         <Spinner
             android:id="@+id/spinnerCountries"
-            android:entries="@array/Countries"
-            android:layout_width="409dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="27dp"
+            android:entries="@array/Countries"
+            android:minHeight="48dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/gender" />
 
     </RadioGroup>
+
+    <Button
+        android:id="@+id/btnMessenger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="7dp"
+        android:text="@string/showdata"
+        app:layout_constraintBottom_toTopOf="@+id/languageslv"
+        app:layout_constraintStart_toStartOf="@+id/languageslv"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
