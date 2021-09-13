@@ -2,10 +2,14 @@ package com.abdul.firstapp;
 
 import static java.sql.DriverManager.println;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.telephony.SmsManager;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -48,7 +52,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         //spinner.
 
     }
-
     @Override
     public void onClick(View view){
         Toast.makeText(this, "Button clicked", Toast.LENGTH_LONG).show();
@@ -79,6 +82,32 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         //Toast.makeText(this, "Item was selected!",Toast.LENGTH_LONG).show();
         String itemSelected = parent.getSelectedItem().toString();
         Toast.makeText(this, itemSelected, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.home_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
+        switch (item.getItemId()){
+            case R.id.miFirst:
+                Toast.makeText(this, "first", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.miSecond:
+                Toast.makeText(this, "second", Toast.LENGTH_SHORT).show();
+
+                break;
+            case R.id.miThird:
+                Toast.makeText(this, "third", Toast.LENGTH_SHORT).show();
+
+                break;
+        }
+        return true;
     }
 
     /**
