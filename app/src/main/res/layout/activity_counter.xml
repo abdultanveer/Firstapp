@@ -13,7 +13,9 @@
         android:id="@+id/contactID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Default"
+        android:ems="10"
+        android:hint="@string/enter_time_in_seconds"
+        android:inputType="textPersonName"
         />
 
     <Button
@@ -21,7 +23,7 @@
         android:onClick="showToast"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="toast" />
+        android:text="@string/toast" />
 
     <TextView
         android:id="@+id/tvCounter"
@@ -38,6 +40,6 @@
         android:onClick="updateCounter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="count" />
+        android:text="@string/count" />
 
 </LinearLayout>

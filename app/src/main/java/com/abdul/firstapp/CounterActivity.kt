@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.provider.AlarmClock
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -22,6 +23,7 @@ class CounterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_counter)
         tvCounter = findViewById(R.id.tvCounter)
         etContact = findViewById(R.id.contactID)
+        etContact.setText("0")
         //var name = intent.getStringExtra("nkey")
         //tvCounter.setText(name)
     }
@@ -41,9 +43,21 @@ class CounterActivity : AppCompatActivity() {
   }
 
     fun updateCounter(view: android.view.View) {
-        var currentValue = Integer.parseInt(tvCounter.text.toString())
-        tvCounter.setText("" + ++counter)
+        var seconds = Integer.parseInt(etContact.text.toString())
+        tvCounter.setText("" + seconds)
+        startTimer("sample",seconds)
         Log.d("CounterActivity", "updateCounter: current value" + counter)
+    }
+
+    fun startTimer(message: String, seconds: Int) {
+        val intent = Intent(AlarmClock.ACTION_SET_TIMER).apply {
+            putExtra(AlarmClock.EXTRA_MESSAGE, message)
+            putExtra(AlarmClock.EXTRA_LENGTH, seconds)
+            putExtra(AlarmClock.EXTRA_SKIP_UI, true)
+        }
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(intent)
+        }
     }
 
     fun showToast(view: android.view.View) {

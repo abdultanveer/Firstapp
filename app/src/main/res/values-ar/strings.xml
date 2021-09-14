@@ -4,4 +4,6 @@
     <string name="enter_password">أدخل كلمة المرور</string>
     <string name="male">ذَكَريّ</string>
     <string name="female">امرأة</string>
+    <string name="count">توقيت مجموعة</string>
+    <string name="toast">خبز محمص</string>
 </resources>

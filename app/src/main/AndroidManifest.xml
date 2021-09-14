@@ -32,10 +32,10 @@
             android:name=".model.Calculator"
             android:exported="true" />
         <activity
-            android:name=".CounterActivity"
+            android:name=".HomeActivity"
             android:exported="true" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".CounterActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
