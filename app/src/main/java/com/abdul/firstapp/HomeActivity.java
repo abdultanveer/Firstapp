@@ -2,6 +2,7 @@ package com.abdul.firstapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
 import android.telephony.SmsManager;
@@ -9,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -22,7 +24,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_home); //layout inflater
         ListView langsListView = findViewById(R.id.languageslv); //socket
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
@@ -39,12 +41,24 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Button mButton = new Button(this);
+        mButton.setText("send");
+        mButton.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        ConstraintLayout cl = findViewById(R.id.homeConstraintLayout);
+        cl.addView(mButton);
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
          super.onCreateOptionsMenu(menu);
+
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.home_menu,menu);
+
         return true;
     }
 
