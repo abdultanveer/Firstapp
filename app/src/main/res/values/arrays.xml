@@ -5,5 +5,7 @@
         name="Countries">
         <item>India</item>
         <item>China</item>
+        <item>USA</item>
+        <item>FRANCE</item>
     </string-array>
 </resources>
