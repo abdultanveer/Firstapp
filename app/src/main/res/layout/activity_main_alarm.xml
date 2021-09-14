@@ -6,12 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/selectedTime"
-        android:textSize="22sp"
-        android:gravity="center"/>
-
     <RelativeLayout
         android:id="@+id/rlBackgroundHelper"
         android:layout_width="wrap_content"
@@ -47,13 +41,6 @@
             android:text="@string/helpingMessageTwo"
             android:visibility="gone" />
 
-        <Button
-            android:id="@+id/selectTime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="-53dp"
-            android:text="Select Time" />
-
         <TextView
             android:id="@+id/timeTv"
             android:layout_width="match_parent"
@@ -75,21 +62,10 @@
         android:onClick="rlButtonLayoutOnClickListener"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvAlarmTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="32dp"
-            android:text="Time: " />
-
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvAlarmTime"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"

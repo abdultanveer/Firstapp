@@ -20,11 +20,12 @@ import android.os.Vibrator
 
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat.getSystemService
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentActivity
 import com.abdul.firstapp.util.Constants
 
 
-class DisplayAlarmActivity : AppCompatActivity()  {
+class DisplayAlarmActivity : AppCompatActivity() {
     /*
     @Inject
     public lateinit var displayViewModel: DisplayAlarmViewModel
@@ -39,8 +40,6 @@ class DisplayAlarmActivity : AppCompatActivity()  {
     val timeInMillis = System.currentTimeMillis()
     //myCalendar.set(Calendar.HOUR_OF_DAY, timePicker.getCurrentHour());
     //cal.set(Calendar.SECOND, 0);
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -97,6 +96,11 @@ class DisplayAlarmActivity : AppCompatActivity()  {
 
     }
 
+    public fun BtnAlarmOnClick(view : View){
+        //DialogFragment timePickerDialog = new TimePickerFragment()
+        //timePickerDialog.show(supportFragmentManager(), "time picker")
+    }
+
     // OnToggleClicked() method is implemented the time functionality
     @RequiresApi(Build.VERSION_CODES.M)
     fun OnToggleClicked(view: View) {
@@ -119,9 +123,6 @@ class DisplayAlarmActivity : AppCompatActivity()  {
         }
 
         Toast.makeText(this@DisplayAlarmActivity, "ALARM ON ID: " + System.currentTimeMillis().toInt(), Toast.LENGTH_SHORT).show()
-
-
-
         }
     }
 

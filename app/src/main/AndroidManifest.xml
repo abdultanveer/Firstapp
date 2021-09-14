@@ -5,9 +5,7 @@
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <!--
-        <uses-permission android:name="android.permission.SEND_SMS"/>
-    -->
+
     <application
         android:allowBackup="true"
         android:fullBackupOnly="true"
@@ -17,7 +15,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Firstapp">
         <activity
-            android:name=".DisplayAlarmActivity"
+            android:name=".BottomNavigationActivity"
+            android:exported="true"
+            android:label="@string/title_activity_bottom_navigation" />
+        <activity
+            android:name=".NavigationActivity"
+            android:exported="true"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/Theme.Firstapp.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CounterActivity"
             android:exported="true" />
 
         <service
@@ -35,7 +48,7 @@
             android:name=".HomeActivity"
             android:exported="true" />
         <activity
-            android:name=".CounterActivity"
+            android:name=".DisplayAlarmActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
