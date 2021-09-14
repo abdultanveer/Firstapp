@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
 import android.telephony.SmsManager;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -33,6 +34,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
 
         toastButton = findViewById(R.id.btnMessage);
+        registerForContextMenu(toastButton);
         //clerk.getSomething(mobilePhone)
         toastButton.setOnClickListener(this); //button is user who's clicking the switch onclick
 
@@ -78,6 +80,32 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
                  break;
          }
+        return true;
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.home_menu,menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+         super.onContextItemSelected(item);
+        switch (item.getItemId()){
+            case R.id.miFirst:
+                Toast.makeText(this, "first-context", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.miSecond:
+                Toast.makeText(this, "second-context", Toast.LENGTH_SHORT).show();
+
+                break;
+            case R.id.miThird:
+                Toast.makeText(this, "third-context", Toast.LENGTH_SHORT).show();
+
+                break;
+        }
         return true;
     }
 
