@@ -19,8 +19,8 @@
     <string name="sun" translatable="false">SU</string>
     <string name="action_settings" translatable="false">Settings</string>
     <string name="time_will_be_shown_here" translatable="false">Time: </string>
-    <string name="set_alarm">Set Alarm</string>
+    <string name="set_alarm" translatable="false">Set Alarm</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
-    <string name="showdata">ShowData</string>
+    <string name="showdata" translatable="false">ShowData</string>
 </resources>

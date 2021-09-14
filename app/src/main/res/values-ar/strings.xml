@@ -2,4 +2,6 @@
 <resources>
     <string name="enter_name">أدخل الاسم</string>
     <string name="enter_password">أدخل كلمة المرور</string>
+    <string name="male">ذَكَريّ</string>
+    <string name="female">امرأة</string>
 </resources>

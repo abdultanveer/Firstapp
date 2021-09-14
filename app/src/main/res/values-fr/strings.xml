@@ -2,4 +2,6 @@
 <resources>
     <string name="enter_name">entrez le nom</string>
     <string name="enter_password">Entrer le mot de passe</string>
+    <string name="male">Entrer le mot de passe</string>
+    <string name="female">mâle</string>
 </resources>
