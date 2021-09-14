@@ -84,4 +84,8 @@ class CounterActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+    }
 }
