@@ -17,7 +17,7 @@ public class AsyncActivity extends AppCompatActivity {
 
     public void downloadMovie(View view) {
         String movieUrl = "http://mymovie.com";
-        DownloadTask downloadTask = new DownloadTask();
+        DownloadTask downloadTask = new DownloadTask(mProgressBar);
         downloadTask.execute(movieUrl);
     }
 }
