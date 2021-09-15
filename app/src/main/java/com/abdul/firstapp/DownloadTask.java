@@ -24,8 +24,14 @@ public class DownloadTask extends AsyncTask<String,Integer,Void> {
     @Override
     protected Void doInBackground(String... strings) { //this method will run on a background worker thread
         Log.i(TAG,"downloading--"+strings[0]);
-        for(int i = 1; i<20; i++) {
+        for(int i = 1; i<=20; i++) {
             publishProgress(i*5);//sending a message
+
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
         }
         return null;
@@ -40,6 +46,6 @@ public class DownloadTask extends AsyncTask<String,Integer,Void> {
     @Override
     protected void onPostExecute(Void unused) {
         super.onPostExecute(unused);
-        //progressBar.setVisibility(View.INVISIBLE);
+        progressBar.setVisibility(View.INVISIBLE);
     }
 }
