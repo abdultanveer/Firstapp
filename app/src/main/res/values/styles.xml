@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="logo_font_style">
+        <item name="android:background">@android:color/holo_blue_light</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>
+
+   <!-- android:background="@android:color/holo_green_dark"
+    android:text="TextView"
+    android:textSize="20sp"-->
