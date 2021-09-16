@@ -31,7 +31,7 @@ public class NetworkUtils {
                     .appendQueryParameter(PRINT_TYPE, "books")
                     .build();
 
-            String weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q="+bookName+"&appid=91666db73c2e1e5370e0";
+            String weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q="+bookName+"&appid=91666db73c1458dd9076532e1e5370e0";
             URL requestURL = new URL(weatherUrl);
                     //builtURI.toString());
 
