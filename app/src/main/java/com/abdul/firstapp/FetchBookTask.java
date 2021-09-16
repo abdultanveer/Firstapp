@@ -23,42 +23,23 @@ public class FetchBookTask extends AsyncTask<String, Void, String> {
         return NetworkUtils.getBookInfo(bookName[0]);
     }
 
-    @Override
+  @Override
     protected void onPostExecute(String jsonString) {
         super.onPostExecute(jsonString);
 
-        try {
-            JSONObject rootJsonObject = new JSONObject(jsonString);
-            JSONArray itemsArray = rootJsonObject.getJSONArray("items");
-            for (int i = 0; i < itemsArray.length(); i++) {
-                JSONObject book = itemsArray.getJSONObject(i);
-                String title = null;
-                String authors = null;
-                JSONObject volumeInfo = book.getJSONObject("volumeInfo");
+      try {
+          JSONObject jsonObject = new JSONObject(jsonString);
+          JSONArray weatherJsonArray = jsonObject.getJSONArray("weather");
+          for(int i=0; i< weatherJsonArray.length();i++){
+              JSONObject mJsonObject = weatherJsonArray.getJSONObject(i);
+              String description = mJsonObject.getString("description");
+              authorTv.setText(description);
+          }
 
-                try {
-                    title = volumeInfo.getString("title");
-                    authors = volumeInfo.getString("authors");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-                if (title != null && authors != null) {
-                    titleTv.setText(title);
-                    authorTv.setText(authors);
-                    return;
-                }
-
-                titleTv.setText("No Results Found");
-                authorTv.setText("");
-
-            }
+      } catch (JSONException e) {
+          e.printStackTrace();
+      }
 
 
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-
-    }
+  }
 }
