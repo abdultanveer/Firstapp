@@ -9,6 +9,8 @@ import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.messaging.FirebaseMessaging
 
 class CounterActivity : AppCompatActivity() {
     var TAG = CounterActivity::class.java.simpleName
@@ -30,6 +32,22 @@ class CounterActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         Log.e(TAG,"onstart")
+
+        FirebaseMessaging.getInstance().token
+            .addOnCompleteListener(OnCompleteListener { task ->
+                if (!task.isSuccessful) {
+                    Log.w(TAG, "Fetching FCM registration token failed", task.exception)
+                    return@OnCompleteListener
+                }
+
+                // Get new FCM registration token
+                val token: String = task.getResult().toString()
+
+                // Log and toast
+                //val msg = getString(R.string.msg_token_fmt, token)
+                Log.d(TAG, token)
+                Toast.makeText(this, token, Toast.LENGTH_SHORT).show()
+            })
 
     }
 
