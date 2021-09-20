@@ -1,5 +1,7 @@
 package com.abdul.firstapp
 
+import android.app.AlarmManager
+import android.app.PendingIntent
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +11,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.app.AlarmManagerCompat
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
 
@@ -101,5 +104,13 @@ class CounterActivity : AppCompatActivity() {
         if (intent.resolveActivity(packageManager) != null) {
             startActivity(intent)
         }
+    }
+
+    fun setAlarm(view: View) {
+        var alarmManager: AlarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
+        var intent: Intent = Intent(this,HomeActivity::class.java)
+        var pendingIntent:PendingIntent = PendingIntent.getActivity(this,123,intent,Intent.FLAG_ACTIVITY_NEW_TASK)
+        var oneMin: Long = 1 * 60 * 1000;
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,System.currentTimeMillis()+oneMin,oneMin,pendingIntent)
     }
 }
