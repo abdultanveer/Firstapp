@@ -3,4 +3,6 @@
     <string name="enter_nm">enter name</string>
     <string name="enter_pwd">enter password</string>
     <string name="instructions">instructions</string>
+    <string name="channel_name">service demo</string>
+    <string name="channel_description">channel description for service demo</string>
 </resources>
