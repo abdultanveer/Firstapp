@@ -11,7 +11,7 @@ import com.abdul.firstapp.database.FeedReaderContract.FeedEntry;
 class DataStorageActivity : AppCompatActivity() {
 
     lateinit var titleEditText: EditText
-    lateinit var  notesEditText: EditText
+    lateinit var notesEditText: EditText
     lateinit var rpCheckBox: CheckBox
     lateinit var notesDao: NotesDao
     lateinit var tvResult: TextView
@@ -28,11 +28,13 @@ class DataStorageActivity : AppCompatActivity() {
         tvResult = findViewById(R.id.tvRetreived)
         notesListView = findViewById(R.id.notesListview)
 
-        var adapter: CursorAdapter = SimpleCursorAdapter(this,
-            android.R.layout.simple_list_item_1, //row layout
+        var adapter: CursorAdapter = SimpleCursorAdapter(
+            this,
+            android.R.layout.simple_list_item_2, //row layout
             notesDao.allRows,    //data cursor
-            arrayOf(FeedEntry.COLUMN_NAME_TITLE), //column names
-            intArrayOf(android.R.id.text1)) //textview id
+            arrayOf(FeedEntry.COLUMN_NAME_TITLE, FeedEntry.COLUMN_NAME_SUBTITLE), //column names
+            intArrayOf(android.R.id.text1, android.R.id.text2)
+        ) //textview id
         notesListView.adapter = adapter
 
     }
@@ -52,9 +54,9 @@ class DataStorageActivity : AppCompatActivity() {
         //open the file in edit mode
         var editor = sharedPreferences.edit()
         //write to the file
-        editor.putString("mtitle",title)
-        editor.putString("mnotes",notes)
-        editor.putBoolean("rpCb",isChecked)
+        editor.putString("mtitle", title)
+        editor.putString("mnotes", notes)
+        editor.putBoolean("rpCb", isChecked)
         //save the file
         editor.apply()
     }
@@ -68,9 +70,9 @@ class DataStorageActivity : AppCompatActivity() {
         //open the file
         var sharedPreferences = getSharedPreferences("myfilename", MODE_PRIVATE)
         //read data from file
-        var title = sharedPreferences.getString("mtitle","")
-        var notes = sharedPreferences.getString("mnotes","")
-        var isChecked: Boolean = sharedPreferences.getBoolean("rpCb",false)
+        var title = sharedPreferences.getString("mtitle", "")
+        var notes = sharedPreferences.getString("mnotes", "")
+        var isChecked: Boolean = sharedPreferences.getBoolean("rpCb", false)
         rpCheckBox.isChecked = isChecked
         //write to the edittexts
         titleEditText.setText(title)
@@ -78,12 +80,12 @@ class DataStorageActivity : AppCompatActivity() {
     }
 
     fun dbHandler(view: View) {
-        when(view.id){
+        when (view.id) {
             R.id.btnCommit -> {
                 commitRow()
             }
             R.id.btnRetreive -> {
-              var result =  notesDao.readRow()
+                var result = notesDao.readRow()
                 tvResult.setText(result)
             }
 
