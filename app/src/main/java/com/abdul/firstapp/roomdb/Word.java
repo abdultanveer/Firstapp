@@ -8,6 +8,10 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Word {
 
+    public Word(String title) {
+        this.title = title;
+    }
+
     @PrimaryKey(autoGenerate=true)
     int wid;
 
