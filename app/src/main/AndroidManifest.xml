@@ -14,8 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Firstapp">
         <activity
+            android:name=".roomdb.RoomActivity"
+            android:exported="true" />
+        <activity
             android:name=".DataStorageActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,9 +33,7 @@
 
         <activity
             android:name=".ServiceDemoActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
@@ -78,7 +79,7 @@
             android:exported="true" />
         <activity
             android:name=".CounterActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />
