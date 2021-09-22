@@ -3,11 +3,10 @@ package com.abdul.firstapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.CheckBox
-import android.widget.EditText
-import android.widget.TextView
+import android.widget.*
 import com.abdul.firstapp.database.NotesDao
 import com.abdul.firstapp.database.model.TodoNote
+import com.abdul.firstapp.database.FeedReaderContract.FeedEntry;
 
 class DataStorageActivity : AppCompatActivity() {
 
@@ -16,6 +15,7 @@ class DataStorageActivity : AppCompatActivity() {
     lateinit var rpCheckBox: CheckBox
     lateinit var notesDao: NotesDao
     lateinit var tvResult: TextView
+    lateinit var notesListView: ListView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +26,15 @@ class DataStorageActivity : AppCompatActivity() {
         rpCheckBox = findViewById(R.id.checkBoxRP)
         notesDao = NotesDao(applicationContext)
         tvResult = findViewById(R.id.tvRetreived)
+        notesListView = findViewById(R.id.notesListview)
+
+        var adapter: CursorAdapter = SimpleCursorAdapter(this,
+            android.R.layout.simple_list_item_1, //row layout
+            notesDao.allRows,    //data cursor
+            arrayOf(FeedEntry.COLUMN_NAME_TITLE), //column names
+            intArrayOf(android.R.id.text1)) //textview id
+        notesListView.adapter = adapter
+
     }
 
     override fun onPause() {

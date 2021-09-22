@@ -35,6 +35,11 @@ public class NotesDao {
         return title + "\n" + subtitle;
     }
 
+    public Cursor getAllRows(){
+        return database.query(FeedEntry.TABLE_NAME, null, null, null, null, null, null);
+
+    }
+
     public void updateRow() {
     }
 
