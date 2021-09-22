@@ -39,4 +39,25 @@
         android:text="remember password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNotes" />
+
+    <Button
+        android:id="@+id/btnCommit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:onClick="dbHandler"
+        android:text="Commit"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnRetreive"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnRetreive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="31dp"
+        android:onClick="dbHandler"
+        android:text="Retreive"
+        app:layout_constraintStart_toEndOf="@+id/btnCommit"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxRP" />
 </androidx.constraintlayout.widget.ConstraintLayout>

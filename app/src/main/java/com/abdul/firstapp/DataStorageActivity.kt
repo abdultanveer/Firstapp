@@ -2,14 +2,18 @@ package com.abdul.firstapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.CheckBox
 import android.widget.EditText
+import com.abdul.firstapp.database.NotesDao
+import com.abdul.firstapp.database.model.TodoNote
 
 class DataStorageActivity : AppCompatActivity() {
 
     lateinit var titleEditText: EditText
     lateinit var  notesEditText: EditText
     lateinit var rpCheckBox: CheckBox
+    lateinit var notesDao: NotesDao
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,6 +22,7 @@ class DataStorageActivity : AppCompatActivity() {
         titleEditText = findViewById(R.id.etTitle);
         notesEditText = findViewById(R.id.etNotes)
         rpCheckBox = findViewById(R.id.checkBoxRP)
+        notesDao = NotesDao(applicationContext)
     }
 
     override fun onPause() {
@@ -58,5 +63,15 @@ class DataStorageActivity : AppCompatActivity() {
         //write to the edittexts
         titleEditText.setText(title)
         notesEditText.setText(notes)
+    }
+
+    fun dbHandler(view: View) {
+        var title = titleEditText.text.toString()
+        var notes = notesEditText.text.toString()
+        var note:TodoNote = TodoNote(title, notes);
+
+        notesDao.createRow(note)
+
+
     }
 }
